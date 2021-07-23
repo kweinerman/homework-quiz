@@ -1,7 +1,10 @@
+
 body {
     color: #fff;
 
 }
+
+/*Style the choices box*/
 .choice-container {
     display: flex;
     margin-bottom: 0.8rem;
@@ -11,7 +14,7 @@ body {
     font-size: 3rem;
     min-width: 80rem;
 }
-
+/*Style the choices box whive holvers (psuedo class)*/
 .choice-container:hover {
     cursor: pointer;
     box-shadow: rgba(6, 103, 247, 0.5);
@@ -30,11 +33,11 @@ body {
 }
 
 .correct {
-    background: linear-gradient(32deg, green 0%, green 100%);
+    background: linear-gradient(32deg, rgb(24, 70, 24) 0%, rgb(27, 71, 27) 100%);
 }
 
 .incorrect {
-    background: linear-gradient(32deg, red 0%, red 100%);
+    background: linear-gradient(32deg, rgb(131, 21, 21) 0%, rgb(131, 31, 31) 100%);
 }
 
 /*Heads up Display */

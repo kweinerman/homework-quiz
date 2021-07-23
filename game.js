@@ -5,7 +5,7 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
-const timerEL = document.querySelector('#TimerDisplay')
+
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -14,12 +14,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 
-
-// if(classToApply === 'incorrect'){
-//     secondsLeft -= 2 * 5 * 1;
-// }
-
-
+//Question set for the quiz
 let questions = [
     {
         question: "Which is NOT a value type in JavaScript?",
@@ -57,23 +52,25 @@ let questions = [
 
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 4;
-
+//game start to pick a random question
 startGame = () => {
     questionCounter = 0;
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
 }
+//Function to find a question that has not been asked yet
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
         localStorage.setItem('mostRecentScore', score)
-
+//bings the user to end screen
          return window.location.assign('./end.html')
     }
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
+    //rnadomizes the question
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
@@ -87,19 +84,7 @@ getNewQuestion = () => {
 
     acceptingAnswers = true
 }
-
-function timer(){
-    var sec = 30;
-    var timer = setInterval(function(){
-        document.getElementById('TimerDisplay').innerHTML='00:'+sec;
-        sec--;
-        if (sec < 0) {
-            clearInterval(timer);
-        }
-    }, 1000);
-}
-
-
+//determines is answer is correct and applies points
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if (!acceptingAnswers) return
@@ -123,10 +108,32 @@ choices.forEach(choice => {
 })
 
 })
+//timer lets 
+let secondsLeft = 30;
 
+const timeEl = document.querySelector('h2');
+
+timeEl.innerHTML = `00:${secondsLeft}`;
+const countDown = setInterval(() =>{
+    secondsLeft--;
+    displayTime(secondsLeft);
+    if(secondsLeft <= 0 || secondsLeft < 1){
+        clearInterval(countDown);
+    }
+},1000)
+// display timer effect
+function displayTime(second){
+    const min = Math.floor(second/ 60);
+    const sec =Math.floor(second % 60);
+    timeEl.innerHTML= secondsLeft
+    if (secondsLeft === 0)
+    return window.location.assign('./end.html')
+}
+
+//keeps score of the game
 incrementScore = num => {
     score += num
     scoreText.innerText = score
 }
-
+//runs game!
 startGame()

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 body{
-    background-color: rgb(29, 26, 26);
+    background-color: rgb(117, 12, 109);
 }
 * {
     box-sizing: border-box;
@@ -11,7 +11,7 @@ body{
 }
 h1{
     font-size: 5.4rem;
-    color: white;
+    color: antiquewhite;
     margin-bottom: 5rem;
 }
 h2{
@@ -54,8 +54,8 @@ display: none;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: rgb(28, 26, 26);
-    background: linear-gradient(90deg, rgb(18, 93, 255)0%, rgb(0, 102, 255)100%);
+    color: rgb(107, 101, 101);
+    background: linear-gradient(90deg, rgb(32, 10, 158)0%, rgb(0, 102, 255)100%);
     border-radius: 4px;
 }
 .btn:hover{
@@ -71,10 +71,10 @@ display: none;
 }
 
 #highscore-btn{
-    background: linear-gradient(90deg, rgb(255, 247, 9)0%, rgb(240, 220, 10)100%);
+    background: linear-gradient(90deg, rgb(209, 206, 104)0%, rgb(240, 220, 10)100%);
 }
 #highscore-btn:hover{
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(224, 224, 78, 0.5);
 }
 
 /*End Game CSS*/
@@ -92,11 +92,11 @@ input {
     padding: 1.5rem;
     font-size: 1.8rem;
     border: none;
-    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(23, 137, 194, 0.5);
 
 }
 input::placeholder {
-    color: #aaa;
+    color: antiquewhite;
 }
 #username {
     margin-bottom: 3rem;
@@ -106,7 +106,7 @@ input::placeholder {
 
 #end-text {
     font-size: 2.4rem;
-    color: #fff;
+    color: antiquewhite;
     text-align: center;
 }
 #saveScoreBtn {
@@ -115,5 +115,5 @@ input::placeholder {
 .fa-home {
     margin-left: 1rem;
     font-size: 2rem;
-    color: rgb(28, 26, 26);
+    color: rgb(10, 30, 80);
 }
